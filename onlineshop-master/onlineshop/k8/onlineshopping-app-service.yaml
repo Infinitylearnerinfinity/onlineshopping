@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eshopping-app # Sets service name
+  labels:
+    app: eshopping-app # Labels and Selectors
+spec:
+  type: NodePort # Sets service type
+  ports:
+    - port: 8051 # Sets port to run the postgres application
+  selector:
+    app: eshopping-app

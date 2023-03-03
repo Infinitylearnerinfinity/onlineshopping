@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eshopping-app-deployment
+  labels:
+    app: eshopping-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eshopping-app
+  template:
+    metadata:
+      labels:
+        app: eshopping-app
+    spec:
+      containers:
+      - name: eshopping-app
+        image: bhavani000001/onlineshopping:0.2
+        ports:
+        - containerPort: 8051
